@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompts</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="heading">Prompts</h1>
+    <button id="add" class="primary" type="button">New prompt</button>
+  </header>
+
+  <main>
+    <section id="library" aria-label="Prompt library">
+      <input id="search" type="search" placeholder="Search prompts" aria-label="Search prompts">
+      <div id="list"></div>
+      <p id="empty" class="empty"></p>
+    </section>
+
+    <form id="editor" hidden>
+      <label for="title">Title</label>
+      <input id="title" required maxlength="90">
+      <label for="text">Prompt</label>
+      <textarea id="text" required rows="7" maxlength="30000"></textarea>
+      <div id="shortcut-fields" hidden>
+        <label for="slot">Keyboard shortcut</label>
+        <select id="slot" aria-describedby="slot-note"></select>
+        <p class="note" id="slot-note" hidden></p>
+      </div>
+      <div class="actions">
+        <button id="cancel" type="button">Cancel</button>
+        <button id="save" class="primary" type="submit">Save</button>
+      </div>
+    </form>
+    <p id="feedback" role="status" hidden></p>
+  </main>
+
+  <footer>
+    <p id="paste-status" class="error" role="status" hidden></p>
+    <div id="paste-setup" hidden>
+      <p>Keyboard paste uses the optional Windows helper.</p>
+      <button id="enable-paste" type="button">Enable keyboard paste</button>
+    </div>
+    <button id="shortcuts" class="text-button" type="button">Manage shortcuts</button>
+  </footer>
+</body>
+</html>

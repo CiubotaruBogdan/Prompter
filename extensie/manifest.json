@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Prompts",
+  "version": "1.1.1",
+  "description": "Save and copy reusable prompts. Enable keyboard paste in Claude and ChatGPT with the optional Windows helper.",
+  "minimum_chrome_version": "102",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtRmjEeeuc6fZ+gT7UaPM9M1EunNKynd2EJ/W9X72uGdgJ/89cRPYMJX9PPBcZAeIo8Sivb4Yz/PgGAgNwjdyaMDHrQHGaHwmVD7SgzeHFkXH60zfUKkCgv9WKSY8gfnhkiCxxhDjdd9d8Bo1rX9lyhaVTRmCfkfj6UvGvoYVYRfFROwiQomT7XXos9aP5gNhMLOjFT9bXE3nDti+kU8A6zF28ppCLZz85pmWpNxhoQICnWutA6FcoDAjn6T1BQ5EdM7suN+lB14Mfw+t0g6fQkUVrrw48XxOQnfQeGva2lc1IU1B2ksXhxj2OGvdZnvnGLAydsAQ4L5og36HXGrAKQIDAQAB",
+  "permissions": ["storage"],
+  "optional_permissions": ["nativeMessaging"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+  },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": {
+    "default_title": "Prompts",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png" },
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "paste-1": { "suggested_key": "Ctrl+Shift+Y", "description": "Paste prompt 1" },
+    "paste-2": { "suggested_key": "Ctrl+Shift+U", "description": "Paste prompt 2" },
+    "paste-3": { "suggested_key": "Ctrl+Shift+K", "description": "Paste prompt 3" },
+    "paste-4": { "suggested_key": "Ctrl+Shift+L", "description": "Paste prompt 4" }
+  }
+}

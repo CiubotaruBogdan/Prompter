@@ -1,0 +1,6 @@
+/dist/
+/windows/PrompturiHost.exe
+/extensie.crx
+*.pem
+*.pfx
+*.p12

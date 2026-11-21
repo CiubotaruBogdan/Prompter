@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  --paper: #fff;
+  --ink: #000;
+  --secondary: #555;
+  --line: #d9d9d9;
+  font: 14px/1.45 "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  width: 360px;
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, p { margin: 0; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 65px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+h1 { font-size: 20px; line-height: 1.2; font-weight: 650; }
+h2 { font-size: 14px; font-weight: 650; overflow-wrap: anywhere; }
+main { padding: 14px 18px; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+button {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--ink); }
+button:disabled { opacity: .55; cursor: wait; }
+
+:is(button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.primary {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.primary:hover { color: var(--ink); background: var(--paper); }
+
+input, select, textarea { width: 100%; padding: 7px 9px; }
+textarea { min-height: 110px; max-height: 225px; resize: vertical; }
+
+#list {
+  max-height: 320px;
+  overflow: auto;
+  padding-inline: 3px;
+  margin-inline: -3px;
+}
+
+.prompt { padding: 12px 0; }
+.prompt + .prompt { border-top: 1px solid var(--line); }
+.prompt:last-child { padding-bottom: 0; }
+
+.prompt-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+kbd {
+  flex: none;
+  color: var(--secondary);
+  font: 11px/1.25 Consolas, monospace;
+}
+
+.preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  margin: 3px 0 7px;
+  color: var(--secondary);
+  white-space: pre-wrap;
+}
+
+.actions { display: flex; align-items: center; gap: 14px; }
+.text-button { padding: 3px 0; border: 0; font-size: 12px; }
+.text-button:hover { text-decoration: underline; }
+.empty { padding: 22px 0 15px; color: var(--secondary); text-align: center; }
+
+form label { display: block; margin-bottom: 4px; font-weight: 600; }
+form :is(input, textarea) { margin-bottom: 12px; }
+form .actions { justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.note { margin-top: 5px; color: var(--secondary); font-size: 12px; }
+
+#feedback { margin-top: 10px; }
+footer { padding: 8px 18px; border-top: 1px solid var(--line); }
+footer p { margin-bottom: 5px; font-size: 12px; }
+#paste-setup { padding-bottom: 6px; }
+.error { border-left: 2px solid var(--ink); padding-left: 8px; }
